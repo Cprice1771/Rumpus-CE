@@ -1,0 +1,433 @@
+{
+	"info": {
+		"_postman_id": "7ae40b7d-c75c-4c09-a60f-a84a85c65910",
+		"name": "Rumpus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Players",
+			"item": [
+				{
+					"name": "Get Aliases",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{delegationCode}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Rumpus-Delegation-Key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.bscotch.net/api/levelhead/aliases?userIds=elkvqr",
+							"protocol": "https",
+							"host": [
+								"www",
+								"bscotch",
+								"net"
+							],
+							"path": [
+								"api",
+								"levelhead",
+								"aliases"
+							],
+							"query": [
+								{
+									"key": "userIds",
+									"value": "elkvqr",
+									"description": "string (required) List of (up to 64) userIds whose aliases are desired."
+								},
+								{
+									"key": "onlySafe",
+									"value": "",
+									"description": "boolean (optional) If true, only return the randomly-generated “safe” names.",
+									"disabled": true
+								},
+								{
+									"key": "maxReports",
+									"value": "",
+									"description": "boolean (optional) If set, the maximum number of reports a user’s alias can have before we send back their “safe” name instead. This is useful for filtering out offensive stuff that hasn’t yet been moderated.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Profiles",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{delegationCode}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Rumpus-Delegation-Key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.bscotch.net/api/levelhead/profiles?maxPlayTime=60",
+							"protocol": "https",
+							"host": [
+								"www",
+								"bscotch",
+								"net"
+							],
+							"path": [
+								"api",
+								"levelhead",
+								"profiles"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "",
+									"description": "string (optional) Example: Subscribers\nThe parameter you want to sort on. By default it returns results from largest to smallest: to inverse this just prefix with a -. Eg. sort=Subscribers vs. sort=-Subscribers.\n\n*Subscribers\n*PlayTime\n*Trophies",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "",
+									"description": "number (optional) Example: 10\nMaximum number of results to return. There is a hard limit of 64 (subject to change) – you’ll have to use paging to obtain additional results.",
+									"disabled": true
+								},
+								{
+									"key": "userIds",
+									"value": "elkvqr",
+									"description": "string (optional) Example: bscotch101,bscotch007\nUp to 16 (subject to change) comma-separated userIds. If set, only Levels created by the users in this list will be returned.",
+									"disabled": true
+								},
+								{
+									"key": "maxSubscribers",
+									"value": "",
+									"description": "number (optional) Example: 5\nLimit results to those with at most this many subscribers.",
+									"disabled": true
+								},
+								{
+									"key": "minSubscribers",
+									"value": "",
+									"description": "number (optional) Example: 1\nLimit results to those with at least this many subscribers.",
+									"disabled": true
+								},
+								{
+									"key": "maxPlayTime",
+									"value": "60",
+									"description": "number (optional) Example: 6000\nLimit results to those with at most this many seconds of playtime."
+								},
+								{
+									"key": "minPlayTime",
+									"value": "",
+									"description": "number (optional) Example: 600\nLimit results to those with at least this many seconds of playtime.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookmarks",
+			"item": []
+		},
+		{
+			"name": "Levels",
+			"item": [
+				{
+					"name": "Level Tags",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{delegationCode}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Rumpus-Delegation-Key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.bscotch.net/api/levelhead/level-tags/counts",
+							"protocol": "https",
+							"host": [
+								"www",
+								"bscotch",
+								"net"
+							],
+							"path": [
+								"api",
+								"levelhead",
+								"level-tags",
+								"counts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Level Search",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{delegationCode}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Rumpus-Delegation-Key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.bscotch.net/api/levelhead/levels?userIds=elkvqr",
+							"protocol": "https",
+							"host": [
+								"www",
+								"bscotch",
+								"net"
+							],
+							"path": [
+								"api",
+								"levelhead",
+								"levels"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "createdAt",
+									"description": "string (optional) Example: createdAt \nThe parameter you want to sort on. By default it returns results from largest to smallest – to inverse this just prefix with a -. Eg. sort=createdAt vs. sort=-createdAt.\n\n*createdAt\n*gameVersion\n*Attempts\n*Players\n*Playtime\n*TimePerWin\n*Difficulty\n*ReplayValue\n*QAScore",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "number (optional) Example: 10 Maximum number of results to return. There is a hard limit of 64 (subject to change) – you’ll have to use paging to obtain additional results.",
+									"disabled": true
+								},
+								{
+									"key": "userIds",
+									"value": "elkvqr",
+									"description": "string (optional) Example: bscotch101,bscotch007\nUp to 16 (subject to change) comma-separated userIds. If set, only Levels created by the users in this list will be returned."
+								},
+								{
+									"key": "levelIds",
+									"value": "78z55g4",
+									"description": "string (optional) Up to 16 (subject to change) comma-separated levelIds (a.k.a. “share codes”). If set, only levels listed here will be returned.",
+									"disabled": true
+								},
+								{
+									"key": "tags",
+									"value": "",
+									"description": "string (optional) Up to 3 comma-separated tags that Levels must have. This parameter is used as an AND, for example, tags=ltag_precise,ltag_puzzle would only return Precise Puzzle. Levels can only have three tags, which is why you can only specify three here!",
+									"disabled": true
+								},
+								{
+									"key": "excludeTags",
+									"value": "",
+									"description": "string (optional) Up to 6 (subject to change) comma-separated tags you want to blacklist. Levels with any of these tags will be excluded.",
+									"disabled": true
+								},
+								{
+									"key": "tower",
+									"value": "",
+									"description": "boolean (optional) If true, only levels in the Tower are returned.",
+									"disabled": true
+								},
+								{
+									"key": "marketing",
+									"value": "",
+									"description": "boolean (optional) If true, only levels in the Marketing department are returned.",
+									"disabled": true
+								},
+								{
+									"key": "includeStats",
+									"value": "",
+									"description": "boolean (optional) To save bandwidth, level stats are not returned by default. Only set to true if you need them!",
+									"disabled": true
+								},
+								{
+									"key": "includeRecords",
+									"value": "",
+									"description": "boolean (optional) To save bandwidth, leaderboards are not returned by default. Only set to true if you need them!",
+									"disabled": true
+								},
+								{
+									"key": "maxClearRate",
+									"value": "0.6",
+									"description": "number (optional) Example: 0.6 Limit results to those with a clear rate (successes/attempts) no more than this value.",
+									"disabled": true
+								},
+								{
+									"key": "minClearRate",
+									"value": "0.01",
+									"description": "number (optional) Example: 0.01 Limit results to those with a clear rate (successes/attempts) no less than this value.",
+									"disabled": true
+								},
+								{
+									"key": "minGameVersion",
+									"value": "0.6.5",
+									"description": "string (optional) Example: 0.6.5 Limit results to those levels published in a game client with at least this version.",
+									"disabled": true
+								},
+								{
+									"key": "maxGameVersion",
+									"value": "0.5.0",
+									"description": "string (optional) Example: 0.5.0 Limit results to those levels published in a game client with at most this version.",
+									"disabled": true
+								},
+								{
+									"key": "minAttempts",
+									"value": "100",
+									"description": "number (optional) Example: 100 Limit results to those levels where players have collectively made at least this many attempts.",
+									"disabled": true
+								},
+								{
+									"key": "maxAttempts",
+									"value": "1000",
+									"description": "number (optional) Example: 1000 Limit results to those levels where players have collectively made at most this many attempts.",
+									"disabled": true
+								},
+								{
+									"key": "minPlayers",
+									"value": "30",
+									"description": "number (optional) Example: 30 Limit results to those levels played by at least this many players.",
+									"disabled": true
+								},
+								{
+									"key": "maxPlayers",
+									"value": "1000",
+									"description": "number (optional) Example: 1000 Limit results to those levels played by at most this many players.",
+									"disabled": true
+								},
+								{
+									"key": "minPlayTime",
+									"value": "600",
+									"description": "number (optional) Example: 600 Limit results to those levels accumulating at least this many seconds of playtime.",
+									"disabled": true
+								},
+								{
+									"key": "maxPlayTime",
+									"value": "6000",
+									"description": "number (optional) Example: 6000 Limit results to those levels accumulating at most this many seconds of playtime.",
+									"disabled": true
+								},
+								{
+									"key": "minTimePerWin",
+									"value": "180",
+									"description": "number (optional) Example: 180 Limit results to those levels with at least this many seconds played per win.",
+									"disabled": true
+								},
+								{
+									"key": "maxTimePerWin",
+									"value": "300",
+									"description": "number (optional) Example: 300 Limit results to those levels with at most this many seconds played per win.",
+									"disabled": true
+								},
+								{
+									"key": "minExposureBucks",
+									"value": "1000",
+									"description": "number (optional) Example: 1000 Limit results to those levels accumulating at least this many Exposure Bucks.",
+									"disabled": true
+								},
+								{
+									"key": "maxExposureBucks",
+									"value": "30000",
+									"description": "number (optional) Example: 30000 Limit results to those levels accumulating at most this many Exposure Bucks.",
+									"disabled": true
+								},
+								{
+									"key": "minReplayValue",
+									"value": "20",
+									"description": "number (optional) Example: 20 Limit results to those levels with at least this “ReplayValue”. Note that this value is based on an internal formula that is subject to frequent change, so use this field with care!",
+									"disabled": true
+								},
+								{
+									"key": "maxReplayValue",
+									"value": "30",
+									"description": "number (optional) Example: 30 Limit results to those levels with at most this “ReplayValue”. Note that this value is based on an internal formula that is subject to frequent change, so use this field with care!",
+									"disabled": true
+								},
+								{
+									"key": "minSecondsAgo",
+									"value": "3600",
+									"description": "number (optional) Example: 3600 Limit results to those levels published no less than this many seconds ago.",
+									"disabled": true
+								},
+								{
+									"key": "maxSecondsAgo",
+									"value": "36000",
+									"description": "number (optional) Example: 36000 Limit results to those levels published no more than this many seconds ago.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "5bfacbb6-34bc-4bbc-9f94-bd38cfb1130b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c2efd349-6957-4c9b-8be3-9c40914fd8d8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "04a40614-6ffa-48ba-8cf6-300451c8c117",
+			"key": "delegationCode",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
